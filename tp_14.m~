@@ -1,0 +1,26 @@
+Te = 0.04;
+n=6;
+z = tf('z',Te);
+s = tf('s');
+w_c = 8;
+
+phi = conphi('Laguerre',[Te , 0 , n],'z',z/(z-1)); 
+Ld = w_c/s;
+per = conper('LS',0.5,Ld);
+K = condes(G3,phi,per);
+
+T3=feedback(G3*K, 1);
+T2=feedback(G2*K, 1);
+T1=feedback(G1*K, 1);
+
+figure(1)
+step(T3);
+figure(2)
+step(T2);
+figure(3)
+step(T1);
+
+figure(4)
+NyquistConstr(K, G(3), per);
+NyquistConstr(K, G(2), per);
+NyquistConstr(K, G(1), per);
