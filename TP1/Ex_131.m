@@ -1,4 +1,4 @@
-load('TP1/TorMod.mat')
+load('TorMod.mat')
 T = 0.04;
 CorD = 'z';
 w_cross = 0;

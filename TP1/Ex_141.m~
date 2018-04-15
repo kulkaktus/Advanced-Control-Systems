@@ -38,7 +38,7 @@ s = tf('s');
 w_c = 2; 
  
 phi = conphi('Laguerre',[Te , 0 , n],'z',z/(z-1));  
-Ld = w_c/s; 
+Ld = w_c/z; 
 per = conper('LS',[MM,8,50],Ld); 
 w=0.1:0.5:pi/Te;
 opt=condesopt('w',w);

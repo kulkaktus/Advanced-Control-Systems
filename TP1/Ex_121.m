@@ -1,6 +1,6 @@
 %% TP1
 
-load ('Data/data1.mat')
+load ('data1.mat')
 Ts=0.04;
 Z=iddata(y,u,Ts);
 Zd=detrend(Z);
